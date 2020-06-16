@@ -1,4 +1,18 @@
 /**index.wxss**/
+.user-wrapper{
+  border:1px red solid;
+  display: flex;
+  flex-wrap:wrap;
+}
+.user-wrapper > input{
+  min-width: 50%;
+  border:1px blue solid;
+}
+.user-motto{
+  text-align:center;
+  display: block;
+
+}
 .userinfo {
   display: flex;
   flex-direction: column;
