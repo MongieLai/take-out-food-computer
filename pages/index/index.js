@@ -4,13 +4,14 @@ const app = getApp()
 
 Page({
   data: {
-    userInput: [0],
+    userInput: [0,0],
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     resultFee: [], //{name:'1',fee:100}
     resultVisible: false,
-    totalPrice: 0
+    totalPrice: 0,
+    stringOfTotalPrice:""
   },
   onSubmit(e) {
     let data = e.detail.value
@@ -23,13 +24,22 @@ Page({
     } = data
     for (let key in data) {
       if (key.indexOf('user') >= 0) {
+        if(!data[key]){
+          wx.showToast({
+            title: '消费价格不能为空',
+            icon: 'none',
+          })
+          return
+        }
         recordList.push({
           value: parseFloat(data[key])
         })
         totalPrice += parseFloat(data[key])
       }
     }
+
     this.setData({
+      stringOfTotalPrice:totalPrice.toFixed(2),
       totalPrice
     })
     let op = []
@@ -44,17 +54,17 @@ Page({
       packingFee > 0 && (record.value += packingFee / recordList.length)
       op.push(record.value.toFixed(2))
     })
-    console.log(recordList)
     let o
     if (!this.data.resultVisible) {
       o = !this.data.resultVisible
     }
-    console.log()
     this.setData({
       resultVisible: o,
       resultFee: op
     })
-    console.log(this.data)
+  },
+  fixedTotalPrice(){
+    return this.data.totalPrice.toFixed(2)
   },
   removeUser() {
     let userInput = this.data.userInput

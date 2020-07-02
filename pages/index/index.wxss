@@ -1,17 +1,90 @@
 /**index.wxss**/
 .user-wrapper{
-  border:1px red solid;
   display: flex;
   flex-wrap:wrap;
+  justify-content: space-between;
+  padding: 0 20rpx 20rpx;
+  margin: 20rpx;
+  background-color: #fff;
+  box-shadow: -2px 2px 5px 1px rgba(0,0,0,.3);
+  border-radius: 16rpx;
+}
+.handle-buttons{
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx;
+
+
+}
+.handle-buttons button{
+  max-width: 200rpx;
+  background-color: #3F84B5;
+  color: white;
+}
+
+.other-fees{
+  background-color: white;
+  box-shadow: -2px 2px 5px 1px rgba(0,0,0,.3);
+  padding: 20rpx;
+  margin: 20rpx;
+  border-radius: 16rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.record-data{
+  background-color: transparent;
+  box-shadow: -2px 2px 5px 1px rgba(0,0,0,.3);
+  padding: 20rpx;
+  margin: 20rpx;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+}
+.data-item{
+  margin-top: 10rpx;
+}
+.haha{
+  width: 100%;
+  text-align: center;
+  font-size: 26rpx;
+  color: rgb(155, 154, 152);
+}
+.xxx{
+  color: black;
+  font-size: 40rpx;
+}
+.other-fees input{
+  width: 33%;
+  padding: 10rpx 20rpx;
+  border:2px #8DBFD9 solid;
+  border-radius:8rpx;
+  margin-top: 20rpx;
+}
+
+.other-fees button{
+  max-width: 400rpx;
+  background-color: #2C85B5;
+  color: white;
+  margin-top:20rpx;
 }
 .user-wrapper > input{
-  min-width: 50%;
-  border:1px blue solid;
+  max-width: 48%;
+  padding: 10rpx 20rpx;
+  border:2px #8DBFD9 solid;
+  border-radius:8rpx;
+  margin-top: 20rpx;
 }
 .user-motto{
   text-align:center;
   display: block;
-
+  background-color: white;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
 }
 .userinfo {
   display: flex;

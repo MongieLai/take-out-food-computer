@@ -5,8 +5,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#343",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#58ACED",
+    "navigationBarTitleText": "外卖AA计算器",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",

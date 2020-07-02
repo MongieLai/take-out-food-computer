@@ -1,29 +1,28 @@
 <!--index.wxml-->
 <view class="container">
-  <!-- <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view> -->
   <view>
     <text class="user-motto">请输入每个人的餐品价格(原价)</text>
     <form bindsubmit="onSubmit">
       <view class="user-wrapper">
-        <input name="user{{index+1}}" wx:for="{{userInput}}" wx:key="index" placeholder="第{{index+1}}个人" />
+        <input name="user{{index+1}}" wx:for="{{userInput}}" wx:key="index" placeholder="第{{index+1}}个人费用" />
       </view>
       
-      <button bindtap="onClick">新增</button>
-      <button bindtap="removeUser">删除</button>
-      <input name="freight" type="number" placeholder="配送费(没有可不填)"></input>
-      <input name="packingFee" type="number" placeholder="餐盒费(没有可不填)"></input>
-      <input name="discount" type="number" placeholder="满减等优惠"></input>
-      <button form-type="submit">确认</button>
+      <view class="handle-buttons">
+        <button bindtap="onClick">新增</button>
+        <button bindtap="removeUser">删除</button>
+      </view>
+      
+      <view class="other-fees">
+        <view class="haha">(没有可不填写)</view>
+        <input name="freight" type="number" placeholder="配送费"></input>
+        <input name="packingFee" type="number" placeholder="餐盒费"></input>
+        <input name="discount" type="number" placeholder="满减等优惠"></input>
+        <button form-type="submit">确认</button>
+      </view>
     </form>
   </view>
-  <view wx:if="{{resultVisible}}">
-    <view>总价{{totalPrice}}</view>
-    <view wx:for="{{resultFee}}" wx:key="index">第{{index+1}}个人应支付：{{item}}</view>
+  <view class="record-data" wx:if="{{resultVisible}}">
+    <view>总价为：<text class="xxx">{{stringOfTotalPrice}}</text></view>
+    <view class="data-item" wx:for="{{resultFee}}" wx:key="index">第{{index+1}}个人应支付：<text class="xxx">{{item}}</text></view>
   </view>
 </view>
